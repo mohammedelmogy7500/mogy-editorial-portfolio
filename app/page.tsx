@@ -35,7 +35,7 @@ export default function HomePage() {
             </div>
 
             {/* Massive Display Title */}
-            <h1 className="text-[13vw] font-bold uppercase leading-[0.92] tracking-tighter text-brutalist-ink sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
+            <h1 className="text-[11vw] font-bold uppercase leading-[1.05] tracking-tight text-brutalist-ink sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
               <span className="block">
                 <span className="inline-flex flex-wrap justify-center gap-2 md:justify-start">
                   <span>HEY,</span>
@@ -159,7 +159,7 @@ export default function HomePage() {
             <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
               CORE DISCIPLINES & VALUE DELIVERED
             </p>
-            <h2 className="mt-2 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink md:text-6xl">
+            <h2 className="mt-2 text-3xl font-bold uppercase leading-tight tracking-tight text-brutalist-ink sm:text-4xl md:text-5xl lg:text-6xl">
               LET&apos;S WORK TOGETHER
             </h2>
             <p className="mt-3 max-w-2xl text-xs uppercase leading-relaxed tracking-wider text-brutalist-muted sm:text-sm">
@@ -239,7 +239,7 @@ export default function HomePage() {
             <p className="text-xs font-bold tracking-widest text-brutalist-ink/70">
               FOR LABS, CLINICS & ORGANIZATIONS
             </p>
-            <h2 className="mt-3 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink md:text-6xl">
+            <h2 className="mt-3 text-3xl font-bold uppercase leading-tight tracking-tight text-brutalist-ink sm:text-4xl md:text-5xl lg:text-6xl">
               AI FOR YOUR ORGANIZATION?
             </h2>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-brutalist-ink md:text-base">
@@ -307,7 +307,7 @@ export default function HomePage() {
               <p className="text-xs font-bold tracking-widest text-brutalist-ink/70">
                 ACADEMIC & PROFESSIONAL FOUNDATION
               </p>
-              <h2 className="mt-3 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink md:text-6xl">
+              <h2 className="mt-3 text-3xl font-bold uppercase leading-tight tracking-tight text-brutalist-ink sm:text-4xl md:text-5xl lg:text-6xl">
                 HANDS-ON APPLIED EXPERIENCE
               </h2>
               <p className="mt-3 text-xs uppercase leading-relaxed tracking-wider text-brutalist-ink/80 sm:text-sm">
@@ -360,7 +360,7 @@ export default function HomePage() {
               <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
                 PORTFOLIO & CASE STUDIES
               </p>
-              <h2 className="mt-2 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink md:text-6xl">
+              <h2 className="mt-2 text-3xl font-bold uppercase leading-tight tracking-tight text-brutalist-ink sm:text-4xl md:text-5xl lg:text-6xl">
                 SELECTED WORK
               </h2>
             </div>
@@ -502,7 +502,7 @@ export default function HomePage() {
               <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
                 LATEST FROM THE FIELD NOTEBOOK
               </p>
-              <h2 className="mt-2 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink md:text-6xl">
+              <h2 className="mt-2 text-3xl font-bold uppercase leading-tight tracking-tight text-brutalist-ink sm:text-4xl md:text-5xl lg:text-6xl">
                 TECHNICAL ARTICLES
               </h2>
             </div>
@@ -566,7 +566,7 @@ export default function HomePage() {
             <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
               START A CONVERSATION
             </p>
-            <h2 className="mt-2 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink md:text-6xl">
+            <h2 className="mt-2 text-3xl font-bold uppercase leading-tight tracking-tight text-brutalist-ink sm:text-4xl md:text-5xl lg:text-6xl">
               GET IN TOUCH
             </h2>
             <p className="mt-3 max-w-xl text-xs uppercase leading-relaxed tracking-wider text-brutalist-muted sm:text-sm">

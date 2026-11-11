@@ -26,15 +26,18 @@
 html {
   scroll-behavior: smooth;
   background-color: #f9f7ec;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: #f9f7ec;
   color: #1a1a1a;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: "Cascadia Code", "Cascadia Mono", "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   margin: 0;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {

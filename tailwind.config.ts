@@ -26,8 +26,11 @@ const config: Config = {
       },
       fontFamily: {
         mono: [
-          "ui-monospace",
+          "Cascadia Code",
+          "Cascadia Mono",
+          "SF Mono",
           "SFMono-Regular",
+          "ui-monospace",
           "Menlo",
           "Monaco",
           "Consolas",
@@ -35,8 +38,17 @@ const config: Config = {
           "Courier New",
           "monospace",
         ],
-        sans: ["var(--font-sans)", "Arial", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: [
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
+        serif: ["Georgia", "Cambria", "Times New Roman", "serif"],
       },
       boxShadow: {
         soft: "0 18px 60px rgba(20, 20, 20, 0.06)",

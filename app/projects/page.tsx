@@ -13,7 +13,7 @@ export default function ProjectsPage() {
         accentColor="bg-brutalist-cyan"
       />
 
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-16 lg:px-12 lg:py-20">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <article

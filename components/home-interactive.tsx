@@ -29,7 +29,7 @@ export function ContactInteractive() {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-12 lg:gap-12">
       {/* Left: Direct Info & Quick Copy */}
       <div className="lg:col-span-5 space-y-6">
         <div className="border-4 border-brutalist-ink bg-brutalist-yellow p-6 shadow-[6px_6px_0_0_#1a1a1a]">
@@ -128,7 +128,6 @@ export function ContactInteractive() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Dr. Jane Smith"
                   className="mt-2 w-full border-4 border-brutalist-ink bg-brutalist-cream px-4 py-3 font-mono text-sm text-brutalist-ink placeholder:text-brutalist-placeholder focus:bg-white focus:outline-none focus:ring-2 focus:ring-brutalist-yellow"
                 />
               </div>
@@ -142,7 +141,6 @@ export function ContactInteractive() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="e.g. jane@company.com"
                   className="mt-2 w-full border-4 border-brutalist-ink bg-brutalist-cream px-4 py-3 font-mono text-sm text-brutalist-ink placeholder:text-brutalist-placeholder focus:bg-white focus:outline-none focus:ring-2 focus:ring-brutalist-yellow"
                 />
               </div>
@@ -155,7 +153,6 @@ export function ContactInteractive() {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tell me about your dataset, clinical AI application, or data analytics goals..."
                   className="mt-2 w-full border-4 border-brutalist-ink bg-brutalist-cream px-4 py-3 font-mono text-sm text-brutalist-ink placeholder:text-brutalist-placeholder focus:bg-white focus:outline-none focus:ring-2 focus:ring-brutalist-yellow"
                 />
               </div>

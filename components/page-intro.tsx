@@ -10,12 +10,12 @@ export function PageIntro({
   accentColor?: string;
 }) {
   return (
-    <header className="border-b-4 border-brutalist-ink bg-brutalist-cream px-6 py-12 lg:px-12 lg:py-16">
+    <header className="border-b-4 border-brutalist-ink bg-brutalist-cream px-6 py-10 md:px-10 md:py-14 lg:px-12 lg:py-16">
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
           {eyebrow}
         </p>
-        <h1 className="mt-3 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink sm:text-6xl lg:text-7xl">
+        <h1 className="mt-3 text-4xl font-bold uppercase leading-none tracking-tighter text-brutalist-ink sm:text-5xl lg:text-7xl">
           {title}
         </h1>
         <div className={`mt-5 h-3.5 w-28 border-2 border-brutalist-ink ${accentColor}`} />

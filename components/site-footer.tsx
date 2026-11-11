@@ -12,7 +12,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t-8 border-brutalist-ink bg-brutalist-ink font-mono text-brutalist-cream">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-12 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:grid-cols-12 lg:gap-8">
           {/* Brand & Manifesto */}
           <div className="lg:col-span-5">
             <div className="inline-block border-4 border-brutalist-cream bg-brutalist-yellow px-3 py-1 text-sm font-black text-brutalist-ink">

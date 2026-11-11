@@ -5,7 +5,7 @@ import { experience, education, course, certificates } from "@/lib/site";
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-brutalist-cream font-mono">
+    <div className="min-h-screen overflow-x-hidden bg-brutalist-cream font-mono">
       <PageIntro
         eyebrow="BACKGROUND & TRACK RECORD"
         title="APPLIED EXPERIENCE"
@@ -13,7 +13,7 @@ export default function ExperiencePage() {
         accentColor="bg-brutalist-red"
       />
 
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-16 lg:px-12 lg:py-20">
         {/* ========================================== */}
         {/* 1. PROFESSIONAL ROLES                     */}
         {/* ========================================== */}

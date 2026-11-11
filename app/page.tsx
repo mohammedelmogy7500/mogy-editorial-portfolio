@@ -20,7 +20,7 @@ export default function HomePage() {
         id="about"
         className="overflow-hidden border-b-8 border-brutalist-ink px-6 py-14 md:px-12 md:py-20"
       >
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_auto] md:gap-14">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_auto] md:gap-12 lg:gap-14">
           {/* Left Column: Heading & CTAs */}
           <div className="flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
             {/* Mobile avatar */}
@@ -93,7 +93,7 @@ export default function HomePage() {
 
           {/* Right Column: Interactive Brutalist Graphic Card with Real Photo */}
           <div className="hidden justify-center md:flex md:justify-end">
-            <div className="relative w-80 border-4 border-brutalist-ink bg-brutalist-cream p-6 shadow-[10px_10px_0_0_#1a1a1a] lg:w-96">
+            <div className="relative w-72 border-4 border-brutalist-ink bg-brutalist-cream p-5 shadow-[10px_10px_0_0_#1a1a1a] lg:w-96 lg:p-6">
               {/* Rotated badge */}
               <div className="absolute -top-4 -right-4 rotate-3 border-4 border-brutalist-ink bg-brutalist-red px-3 py-1 text-[11px] font-black uppercase text-brutalist-cream shadow-[3px_3px_0_0_#1a1a1a]">
                 MORE FUN THIS WAY ✦
@@ -104,7 +104,7 @@ export default function HomePage() {
                 <img
                   src={site.avatar}
                   alt={site.name}
-                  className="h-72 w-full object-cover object-center transition-transform duration-300 hover:scale-105"
+                  className="h-56 w-full object-cover object-center transition-transform duration-300 hover:scale-105 lg:h-72"
                 />
                 <div className="absolute bottom-2 left-2 border-2 border-brutalist-ink bg-brutalist-ink px-2 py-0.5 text-[10px] font-black uppercase text-brutalist-yellow">
                   {site.nickname} // AI LAB
@@ -169,7 +169,7 @@ export default function HomePage() {
           </div>
 
           {/* 3 Brutalist Cards Grid */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.id}
@@ -514,7 +514,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {notes.map((note, idx) => (
               <article
                 key={idx}

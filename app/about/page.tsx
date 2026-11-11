@@ -5,7 +5,7 @@ import { site, education } from "@/lib/site";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-brutalist-cream font-mono">
+    <div className="min-h-screen bg-brutalist-cream font-sans">
       <PageIntro
         eyebrow="PROFILE & PHILOSOPHY"
         title="ABOUT ME"

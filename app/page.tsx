@@ -12,7 +12,7 @@ import { ContactInteractive } from "@/components/home-interactive";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen overflow-x-clip bg-brutalist-cream font-mono selection:bg-brutalist-red selection:text-brutalist-cream">
+    <div className="min-h-screen overflow-x-clip bg-brutalist-cream font-sans selection:bg-brutalist-red selection:text-brutalist-cream">
       {/* ============================================================== */}
       {/* 1. HERO SECTION (#about)                                       */}
       {/* ============================================================== */}

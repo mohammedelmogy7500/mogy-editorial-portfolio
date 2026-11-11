@@ -5,7 +5,7 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-brutalist-cream font-mono">
+    <div className="min-h-screen bg-brutalist-cream font-sans">
       <PageIntro
         eyebrow="CONTACT & INQUIRIES"
         title="GET IN TOUCH"

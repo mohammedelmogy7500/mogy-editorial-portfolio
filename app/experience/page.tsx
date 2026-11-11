@@ -5,7 +5,7 @@ import { experience, education, course, certificates } from "@/lib/site";
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-brutalist-cream font-mono">
+    <div className="min-h-screen overflow-x-hidden bg-brutalist-cream font-sans">
       <PageIntro
         eyebrow="BACKGROUND & TRACK RECORD"
         title="APPLIED EXPERIENCE"

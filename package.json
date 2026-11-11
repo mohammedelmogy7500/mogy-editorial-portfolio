@@ -15,7 +15,7 @@
     "@next/mdx": "^16.4.6",
     "@types/mdx": "^2.0.14",
     "lucide-react": "^0.468.0",
-    "next": "15.5.6",
+    "next": "latest",
     "next-themes": "^0.4.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

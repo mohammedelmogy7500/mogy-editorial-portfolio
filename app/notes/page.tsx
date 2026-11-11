@@ -5,7 +5,7 @@ import { notes } from "@/lib/site";
 
 export default function NotesPage() {
   return (
-    <div className="min-h-screen bg-brutalist-cream font-mono">
+    <div className="min-h-screen bg-brutalist-cream font-sans">
       <PageIntro
         eyebrow="FIELD NOTES & ARTICLES / 01—03"
         title="TECHNICAL ARTICLES"

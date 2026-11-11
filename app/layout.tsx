@@ -135,7 +135,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body suppressHydrationWarning className="min-h-screen bg-brutalist-cream font-mono text-brutalist-ink selection:bg-brutalist-red selection:text-brutalist-cream">
+      <body suppressHydrationWarning className="min-h-screen bg-brutalist-cream font-sans text-brutalist-ink selection:bg-brutalist-red selection:text-brutalist-cream">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

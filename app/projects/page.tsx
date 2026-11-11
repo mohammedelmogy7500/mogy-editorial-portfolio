@@ -5,7 +5,7 @@ import { projects } from "@/lib/site";
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-brutalist-cream font-mono">
+    <div className="min-h-screen bg-brutalist-cream font-sans">
       <PageIntro
         eyebrow="PORTFOLIO & RESEARCH / 01—06"
         title="SELECTED WORK"

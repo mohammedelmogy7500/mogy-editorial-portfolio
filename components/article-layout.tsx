@@ -20,8 +20,8 @@ export function ArticleLayout({
   return (
     <div className="min-h-screen bg-brutalist-cream font-mono">
       {/* Top Navigation */}
-      <div className="border-b-4 border-brutalist-ink bg-white px-6 py-4 lg:px-12">
-        <div className="mx-auto flex max-w-4xl items-center justify-between">
+      <div className="border-b-4 border-brutalist-ink bg-white px-6 py-4 lg:px-12 2xl:px-16">
+        <div className="mx-auto flex max-w-5xl 2xl:max-w-6xl items-center justify-between">
           <Link
             href="/notes"
             className="inline-flex items-center gap-2 border-2 border-brutalist-ink bg-brutalist-cream px-3 py-1.5 text-xs font-bold uppercase text-brutalist-ink shadow-[2px_2px_0_0_#1a1a1a] transition-transform hover:translate-x-0.5 hover:translate-y-0.5"
@@ -37,8 +37,8 @@ export function ArticleLayout({
       </div>
 
       {/* Article Header */}
-      <header className="border-b-8 border-brutalist-ink bg-brutalist-yellow/30 px-6 py-12 lg:px-12 lg:py-16">
-        <div className="mx-auto max-w-4xl">
+      <header className="border-b-8 border-brutalist-ink bg-brutalist-yellow/30 px-6 py-12 lg:px-12 2xl:px-16 lg:py-16">
+        <div className="mx-auto max-w-5xl 2xl:max-w-6xl">
           <div className="flex flex-wrap items-center gap-3">
             <span className="border-2 border-brutalist-ink bg-brutalist-yellow px-3 py-1 text-xs font-black uppercase text-brutalist-ink shadow-[2px_2px_0_0_#1a1a1a]">
               {category}
@@ -76,7 +76,7 @@ export function ArticleLayout({
       </header>
 
       {/* MDX Body Content */}
-      <main className="mx-auto max-w-4xl px-6 py-12 lg:px-12 lg:py-16">
+      <main className="mx-auto max-w-5xl 2xl:max-w-6xl px-6 py-12 lg:px-12 2xl:px-16 lg:py-16">
         <div className="border-4 border-brutalist-ink bg-white p-6 shadow-[8px_8px_0_0_#1a1a1a] sm:p-10 lg:p-12">
           {children}
         </div>

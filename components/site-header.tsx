@@ -17,16 +17,16 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b-4 border-brutalist-ink bg-brutalist-cream">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand / Logo with Real Profile Avatar */}
+      <div className="mx-auto flex h-20 max-w-7xl 2xl:max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
+        {/* Brand / Logo */}
         <Link
           href="/"
           className="group flex items-center gap-3"
           aria-label="Go to homepage"
         >
           <div className="flex flex-col">
-            <span className="text-xs font-black uppercase tracking-wider text-brutalist-ink sm:text-sm">
-              {site.nickname}
+            <span className="text-sm font-black uppercase tracking-widest text-brutalist-ink sm:text-base">
+              MOHAMED
             </span>
             <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-brutalist-muted">
               <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />

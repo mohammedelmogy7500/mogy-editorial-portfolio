@@ -18,9 +18,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section
         id="about"
-        className="overflow-hidden border-b-8 border-brutalist-ink px-6 py-14 md:px-12 md:py-20"
+        className="overflow-hidden border-b-8 border-brutalist-ink px-6 py-14 md:px-12 2xl:px-16 md:py-20 2xl:py-28"
       >
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_auto] md:gap-12 lg:gap-14">
+        <div className="mx-auto grid max-w-7xl 2xl:max-w-[1600px] grid-cols-1 items-center gap-10 md:grid-cols-[1.2fr_auto] 2xl:grid-cols-[1.3fr_auto] md:gap-12 lg:gap-16">
           {/* Left Column: Heading & CTAs */}
           <div className="flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
             {/* Mobile avatar */}
@@ -35,7 +35,7 @@ export default function HomePage() {
             </div>
 
             {/* Massive Display Title */}
-            <h1 className="text-[13vw] font-bold uppercase leading-[0.92] tracking-tighter text-brutalist-ink sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="text-[13vw] font-bold uppercase leading-[0.92] tracking-tighter text-brutalist-ink sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
               <span className="block">
                 <span className="inline-flex flex-wrap justify-center gap-2 md:justify-start">
                   <span>HEY,</span>
@@ -50,12 +50,12 @@ export default function HomePage() {
             </h1>
 
             {/* Subheading & Bio */}
-            <p className="mt-7 max-w-lg text-sm font-bold uppercase leading-snug text-brutalist-ink md:text-lg">
+            <p className="mt-7 max-w-xl 2xl:max-w-2xl text-sm font-bold uppercase leading-snug text-brutalist-ink md:text-lg">
               AI Engineer, Data Analyst,
               <br className="md:hidden" /> and Bioinformatics Researcher
             </p>
 
-            <p className="mt-3 max-w-xl text-xs uppercase leading-relaxed tracking-wider text-brutalist-muted sm:text-sm">
+            <p className="mt-3 max-w-xl 2xl:max-w-2xl text-xs uppercase leading-relaxed tracking-wider text-brutalist-muted sm:text-sm">
               Building thoughtful AI for real-world problems. Turning medical imaging
               data, complex healthcare workflows, and business transactions into high-precision
               neural predictions and actionable intelligence.
@@ -93,7 +93,7 @@ export default function HomePage() {
 
           {/* Right Column: Interactive Brutalist Graphic Card with Real Photo */}
           <div className="hidden justify-center md:flex md:justify-end">
-            <div className="relative w-72 border-4 border-brutalist-ink bg-brutalist-cream p-5 shadow-[10px_10px_0_0_#1a1a1a] lg:w-96 lg:p-6">
+            <div className="relative w-72 border-4 border-brutalist-ink bg-brutalist-cream p-5 shadow-[10px_10px_0_0_#1a1a1a] lg:w-96 2xl:w-[440px] lg:p-6 2xl:p-8">
               {/* Rotated badge */}
               <div className="absolute -top-4 -right-4 rotate-3 border-4 border-brutalist-ink bg-brutalist-red px-3 py-1 text-[11px] font-black uppercase text-brutalist-cream shadow-[3px_3px_0_0_#1a1a1a]">
                 MORE FUN THIS WAY ✦
@@ -104,7 +104,7 @@ export default function HomePage() {
                 <img
                   src={site.avatar}
                   alt={site.name}
-                  className="h-56 w-full object-cover object-center transition-transform duration-300 hover:scale-105 lg:h-72"
+                  className="h-56 w-full object-cover object-center transition-transform duration-300 hover:scale-105 lg:h-72 2xl:h-96"
                 />
                 <div className="absolute bottom-2 left-2 border-2 border-brutalist-ink bg-brutalist-ink px-2 py-0.5 text-[10px] font-black uppercase text-brutalist-yellow">
                   {site.nickname} // AI LAB
@@ -152,9 +152,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section
         id="services"
-        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 md:py-24"
+        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 2xl:px-16 md:py-24"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1600px]">
           <div className="mb-10 text-center md:mb-14 md:text-left">
             <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
               CORE DISCIPLINES & VALUE DELIVERED
@@ -232,9 +232,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section
         id="companies"
-        className="border-b-8 border-brutalist-ink bg-brutalist-teal px-6 py-14 md:px-12 md:py-20"
+        className="border-b-8 border-brutalist-ink bg-brutalist-teal px-6 py-14 md:px-12 2xl:px-16 md:py-20"
       >
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
+        <div className="mx-auto grid max-w-7xl 2xl:max-w-[1600px] grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_0.9fr] 2xl:grid-cols-[1.2fr_0.8fr] md:gap-14 2xl:gap-16">
           <div>
             <p className="text-xs font-bold tracking-widest text-brutalist-ink/70">
               FOR LABS, CLINICS & ORGANIZATIONS
@@ -300,8 +300,8 @@ export default function HomePage() {
       {/* ============================================================== */}
       {/* 4. APPLIED EXPERIENCE & EDUCATION BANNER                       */}
       {/* ============================================================== */}
-      <section className="border-b-8 border-brutalist-ink bg-brutalist-yellow px-6 py-14 md:px-12 md:py-20">
-        <div className="mx-auto max-w-6xl">
+      <section className="border-b-8 border-brutalist-ink bg-brutalist-yellow px-6 py-14 md:px-12 2xl:px-16 md:py-20">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1600px]">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
               <p className="text-xs font-bold tracking-widest text-brutalist-ink/70">
@@ -352,9 +352,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section
         id="projects"
-        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 md:py-24"
+        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 2xl:px-16 md:py-24"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1600px]">
           <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end md:mb-14">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
@@ -494,9 +494,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section
         id="notes"
-        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 md:py-20"
+        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 2xl:px-16 md:py-20"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1600px]">
           <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end md:mb-12">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
@@ -559,9 +559,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section
         id="contact"
-        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 md:py-24"
+        className="border-b-8 border-brutalist-ink bg-brutalist-cream px-6 py-14 md:px-12 2xl:px-16 md:py-24"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1600px]">
           <div className="mb-10 text-center md:mb-14 md:text-left">
             <p className="text-xs font-bold uppercase tracking-widest text-brutalist-muted">
               START A CONVERSATION

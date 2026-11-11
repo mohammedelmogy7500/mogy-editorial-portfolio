@@ -13,7 +13,7 @@ export default function ContactPage() {
         accentColor="bg-brutalist-yellow"
       />
 
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 py-14 lg:px-12 2xl:px-16 lg:py-20">
         <ContactInteractive />
 
         {/* Secondary Info Badges */}

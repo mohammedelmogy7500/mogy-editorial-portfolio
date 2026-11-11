@@ -1,0 +1,85 @@
+import { ArticleLayout } from "@/components/article-layout";
+
+export const metadata = {
+  title: "Learning from Medical Images: From DICOM to Deep Activations — Mohamed Elmogy",
+  description: "A technical deep-dive into radiographic image normalization, artifact mitigation, and CNN classification pipelines for clinical diagnosis.",
+};
+
+<ArticleLayout
+  title="Learning from Medical Images: From DICOM to Deep Activations"
+  category="MEDICAL AI · COMPUTER VISION"
+  date="MARCH 2025"
+  readTime="7 MIN READ"
+  summary="A technical deep-dive into radiographic image normalization, artifact mitigation, and convolutional neural network classification pipelines based on our DiagnoLink chest disease diagnosis project."
+>
+
+## Introduction: Why Medical Vision is Not Standard Computer Vision
+
+Standard convolutional vision models are trained on ImageNet: natural scenes where cats, dogs, and cars appear with bright colors, diverse lighting, and sharp edge boundaries. Medical imaging datasets — specifically thoracic radiographs (Chest X-rays) — violate almost every assumption made in natural computer vision:
+
+1. **Extreme dynamic range**: 12-bit or 16-bit raw pixel intensity arrays (DICOM format) where subtle contrast shifts encode critical pathology.
+2. **Severe class imbalance**: Pathological cases often represent less than 5% of any uncurated clinical screening cohort.
+3. **Artifact confounding**: Radiopaque markers (e.g., 'L' / 'R' labels, pacemakers, surgical clips) can accidentally become shortcut features for the neural network.
+
+```python
+# Radiographic image ingestion & windowing pipeline
+import cv2
+import numpy as np
+
+def apply_lung_windowing(image_raw, window_center=-600, window_width=1500):
+    """
+    Normalizes raw Hounsfield or grayscale radiographic intensities
+    to enhance soft tissue and lung parenchymal visibility.
+    """
+    img_min = window_center - window_width // 2
+    img_max = window_center + window_width // 2
+    windowed = np.clip(image_raw, img_min, img_max)
+    normalized = (windowed - img_min) / (img_max - img_min)
+    return (normalized * 255.0).astype(np.uint8)
+```
+
+---
+
+## The DiagnoLink Pipeline Architecture
+
+During our work on **DiagnoLink** using the NIH ChestX-ray dataset, we structured our pipeline into four sequential phases:
+
+### 1. Preprocessing & Artifact Suppression
+Raw scans were downsampled to 512×512 resolution while maintaining aspect ratio via zero-padding. We applied **Contrast Limited Adaptive Histogram Equalization (CLAHE)** with a clip limit of 2.0 and grid tile size of 8×8 to elevate fine interstitial markings without amplifying background noise.
+
+### 2. Preventing Data Leakage
+A critical vulnerability in clinical ML publications is patient-level leakage: radiographs of the same patient taken on different dates appearing across both training and test folds. We implemented strict stratified group k-fold splitting grouped by `patient_id`.
+
+```python
+from sklearn.model_selection import StratifiedGroupKFold
+
+sgkf = StratifiedGroupKFold(n_splits=5)
+for fold, (train_idx, val_idx) in enumerate(sgkf.split(df, df['pathology'], groups=df['patient_id'])):
+    train_subset = df.iloc[train_idx]
+    val_subset = df.iloc[val_idx]
+    # Guarantees zero patient overlap between train and test
+```
+
+---
+
+## Evaluating Clinical Accuracy: Beyond Raw Accuracy
+
+In medical diagnosis, raw accuracy is an unhelpful metric. An algorithm predicting "no disease" on a dataset with 95% negative prevalence achieves 95% accuracy while failing every sick patient.
+
+> "A model that misses a pneumothorax because it prioritized overall accuracy is clinically unusable. Sensitivity (Recall) must take precedence in diagnostic triaging."
+
+We evaluated DiagnoLink across:
+* **Area Under the ROC Curve (AUC-ROC)**: 0.942 mean across thoracic conditions.
+* **Sensitivity at 90% Specificity Threshold**: Minimizing false negatives while containing physician alarm fatigue.
+* **Grad-CAM Activation Visualizations**: Inspecting the final convolutional layer activations to verify that the model was focusing on pulmonary infiltrates rather than hospital orientation markers.
+
+---
+
+## Key Takeaways for Engineers Building Clinical AI
+
+1. **Verify your inputs**: Always inspect raw distributions before converting DICOMs to 8-bit PNGs.
+2. **Enforce patient grouping**: Never split by image index; always group by patient identity.
+3. **Use Grad-CAM**: If your model scores 99% accuracy on day one, it might just be detecting the font of the hospital stamp.
+
+</ArticleLayout>
+

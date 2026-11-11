@@ -1,0 +1,93 @@
+import { ArticleLayout } from "@/components/article-layout";
+
+export const metadata = {
+  title: "Computational Approaches to Genomic Sequence Alignment — Mohamed Elmogy",
+  description: "Comparing exact dynamic programming (Needleman-Wunsch & Smith-Waterman) with heuristic search (BLAST) using Python and Biopython.",
+};
+
+<ArticleLayout
+  title="Computational Approaches to Genomic Sequence Alignment"
+  category="BIOINFORMATICS · ALGORITHMS"
+  date="JANUARY 2025"
+  readTime="8 MIN READ"
+  summary="Demystifying exact dynamic programming algorithms versus heuristic search (NCBI BLAST) using Biopython for high-throughput genomic data processing."
+>
+
+## The Challenge: Aligning Billions of Base Pairs
+
+At its core, bioinformatics is about finding meaningful patterns in biological strings — DNA sequences ($A, C, G, T$) and protein amino acid chains ($20$ standard symbols). When a new genetic sequence is isolated from a tissue biopsy or patient sample, the fundamental scientific question is:
+
+> *"What known genes or evolutionary relatives share homology with this query sequence?"*
+
+Because biological sequences undergo mutations, insertions, and deletions over evolutionary time, comparing two sequences is not a simple string equality check: we must compute an **optimal alignment score** accounting for matches, mismatches, and gaps.
+
+---
+
+## Exact Dynamic Programming: Needleman-Wunsch & Smith-Waterman
+
+In the 1970s and 1980s, dynamic programming established the mathematical foundation of sequence alignment:
+
+1. **Needleman-Wunsch (Global Alignment)**: Aligns two sequences across their entire length. Optimal when comparing genes of similar length with shared ancestry.
+2. **Smith-Waterman (Local Alignment)**: Identifies the highest-scoring local subregion between two sequences, ignoring flanking divergent regions.
+
+```python
+# Conceptual matrix recurrence for local alignment (Smith-Waterman)
+import numpy as np
+
+def smith_waterman_score(seq1: str, seq2: str, match=2, mismatch=-1, gap=-2):
+    m, n = len(seq1), len(seq2)
+    H = np.zeros((m + 1, n + 1), dtype=int)
+    
+    max_score = 0
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            score_diag = H[i-1, j-1] + (match if seq1[i-1] == seq2[j-1] else mismatch)
+            score_up = H[i-1, j] + gap
+            score_left = H[i, j-1] + gap
+            H[i, j] = max(0, score_diag, score_up, score_left)
+            if H[i, j] > max_score:
+                max_score = H[i, j]
+                
+    return max_score, H
+```
+
+The limitation of Smith-Waterman is computational complexity: `O(m × n)` time and space. When querying a 1,000 base pair gene against the human genome (3 billion base pairs), exact dynamic programming requires trillions of matrix operations.
+
+---
+
+## Heuristic Sequence Search: The Power of BLAST
+
+To solve the quadratic bottleneck, the **Basic Local Alignment Search Tool (BLAST)** replaces the exhaustive matrix search with a heuristic seed-and-extend approach:
+
+1. **K-mer Word Indexing**: Break the query sequence into short words (e.g., $k=11$ for DNA, $k=3$ for proteins).
+2. **Neighborhood Evaluation**: Identify high-scoring seed matches in the target database using substitution scoring matrices (BLOSUM62 or PAM250).
+3. **Extension Phase**: Extend hits in both directions until the local alignment score drops below a designated threshold $X$.
+
+```python
+# High-throughput FASTA parsing & local BLAST querying with Biopython
+from Bio import SeqIO
+from Bio.Blast import NCBIWWW, NCBIXML
+
+def parse_and_blast_fasta(fasta_path: str, max_records=5):
+    """
+    Parses multi-sequence FASTA files with Biopython and triggers
+    BLAST heuristic queries for candidate homology.
+    """
+    records = list(SeqIO.parse(fasta_path, "fasta"))
+    print(f"Loaded {len(records)} sequences from {fasta_path}")
+    
+    for record in records[:max_records]:
+        print(f"Querying ID: {record.id} (Length: {len(record.seq)} bp)")
+        # In production, query local BLAST databases for high-speed offline analysis
+        # result_handle = NCBIWWW.qblast("blastn", "nt", record.seq)
+```
+
+---
+
+## Practical Engineering Lessons in Genomic Pipelines
+
+* **Avoid in-memory concatenation**: Genomic FASTA files can easily reach 10GB–50GB. Use generator iterators like `SeqIO.parse()` rather than reading the entire file into memory with `list()`.
+* **Standardize gap penalties**: Affine gap penalties (penalizing gap opening heavier than gap extension: `Wg + k * Ws`) reflect biological reality far better than constant penalties.
+* **Filter low-complexity regions**: Repetitive sequence motifs (e.g., poly-A tails) generate spurious high-scoring alignments unless masked prior to alignment.
+
+</ArticleLayout>
